@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
-    <header class="navbar navbar-light bg-dark text-white">
+<body class="h-100">
+    <header class="navbar navbar-light bg-dark text-white shadow-lg">
         <a href="#" class="navbar-brand text-white">
             <h3>Logo</h3>
         </a>
@@ -20,9 +20,7 @@
             <div class="dropdown my-2 my-sm-0"></div>
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"></button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Add problem</a>
-                    <a class="dropdown-item" href="#">Change name</a>
-                    <a class="dropdown-item" href="#">Reset password</a>
+                    <a class="dropdown-item" href="#">Settings</a>
                     <a class="dropdown-item" href="#">Log off</a>
                 </div>
             </div>
@@ -30,24 +28,31 @@
         </div>  
     </header>
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <div class="card text-left" onclick="cardClick()">
-                    <div class="card-body">
-                        <h3 class="card-title">Title</h4>   
-                        <p class="card-text" style="min-height: 100px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sequi officiis asperiores sed quas fugit cum vero, quia odio perspiciatis rerum repellat hic earum repudiandae, necessitatibus quis consectetur fuga voluptatem!</p>
-                        <a href="#" id="cardBtn" class="btn btn-primary float-right">Coins: 0</a>
-                    </div>
-                </div>
+    <div class="container" style="min-width: 40%; margin-top: 4%">
+        <div class="row"></div>
+        <form class="rounded border p-4 m-3 shadow-lg" method="GET" action="http://52.233.199.97:1488/login">
+            <input type="hidden" name="customer" value="ddd"> 
+            <div class="form-group">
+                <h1>Please describe problem</h2>
             </div>
-        </div>
-        
+            <div class="form-group">
+              <label>Title:</label>
+              <input type="text" name="problem_title" class="form-control shadow-sm" placeholder="Title" aria-describedby="helpId" required>
+            </div>
+            <div class="">
+                <label>Description:</label>
+                <textarea type="text" name="problem_descrition" style="min-height: 300px;" class="form-control text-wrap shadow-sm" placeholder="Description" aria-describedby="helpId"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Karma:</label>
+                <input type="text" name="coins" pattern="^[ 0-9]+$" class="form-control w-25 shadow-sm" placeholder="Cost of karma" aria-describedby="helpId">
+            </div>
+            <button type="submit" class="btn btn-primary m-2 w-100 shadow-sm">Create</button>
+        </form>
+    </div>
     </div>
 
-    <!--<a class="btn btn-primary rounded-circle align-text-top" style="font-size: 6em" href="#" role="button">+</a>-->
-
-    <script src="script.js"></script>
+    <script src="addProblem.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
