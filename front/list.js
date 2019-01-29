@@ -22,3 +22,20 @@ function fill(problems) {
         list.appendChild(card.cloneNode(true))
     });
 }
+
+function cardClick(id) {
+    
+}
+
+document.getElementById("cardContainer").onclick = function(event) 
+{
+    var target = event.target
+
+    while (target != this) {
+        if (target.tagName == 'DIV') {
+            cardClick(target.id)
+            return;
+        }
+        target = target.parentNode;
+    }
+}
