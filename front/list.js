@@ -45,7 +45,7 @@ function fill(problems) {
         card.className = "card text-left m-2 shadow custom-card custom-card"
         card.getElementsByClassName("card-title")[0].innerHTML = element.problem_title
         card.getElementsByClassName("card-text")[0].innerHTML = element.problem_descrition
-        card.getElementsByClassName("btn")[0].innerHTML = "Carma: " + element.coins
+        card.getElementsByClassName("btn")[0].innerHTML = "Coins: " + element.coins
         list.appendChild(card.cloneNode(true))
     });
 }
